@@ -1,4 +1,4 @@
-//---------Verilog code for ALU---------//
+//---------System Verilog code for ALU---------//
 module ALU(
   input  [15:0] alu_in1,  //src1
   input  [15:0] alu_in2,  //src2
