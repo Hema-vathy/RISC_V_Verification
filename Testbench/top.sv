@@ -3,7 +3,6 @@
 `include "interface.sv"
 import tb_pkg::*; 
 module test_Risc_16_bit;
- //logic reg_write_data;
   risc_if vif(); 
  // Instantiate the Unit Under Test (UUT)
  Risc_16_bit uut (
