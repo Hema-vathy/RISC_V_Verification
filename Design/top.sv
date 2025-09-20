@@ -40,10 +40,6 @@ module Risc_16_bit(
   output reg bne_control,
   output reg [12:0] jump_shift
 );
-//  wire jump,bne,beq,alu_src,reg_dst,mem_to_reg,reg_write;
-//  wire[1:0] alu_op;
-//  wire [3:0] opcode;
-//  wire [15:0] reg_write_data;
  // Datapath
  Datapath_Unit DU
  (
