@@ -1,0 +1,34 @@
+//`timescale 1ns / 1ps
+//-----------System Verilog code for register file----------//
+module GPRs(
+ input    clk,
+ input rst,
+ // write port
+ input    reg_write,
+ input  [2:0] reg_write_dest,
+ input  [15:0] reg_write_data,
+ //read port 1
+ input  [2:0] reg_read_addr_1,
+ output  [15:0] reg_read_data_1,
+ //read port 2
+ input  [2:0] reg_read_addr_2,
+  output  [15:0] reg_read_data_2,
+  output reg [15:0] reg_array [7:0]
+);
+  
+ integer i;
+ always @ (posedge clk ) begin
+   if(rst) begin
+      for(i=0;i<8;i=i+1)
+        reg_array[i] <= 16'd0;
+   end
+   else begin
+     if(reg_write) begin
+       reg_array[reg_write_dest] <= reg_write_data;
+     end
+   end
+ end
+
+ assign reg_read_data_1 = reg_array[reg_read_addr_1];
+ assign reg_read_data_2 = reg_array[reg_read_addr_2];
+endmodule
